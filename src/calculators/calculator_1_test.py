@@ -21,4 +21,4 @@ def test_calculate_with_invalid_body():
     calculator = Calculator1()
     with raises(Exception) as exception_info:
         calculator.calculate(mock_request)
-    assert str(exception_info.value) == "number is required"
+    assert str(exception_info.value) == "('number is required', 422)"

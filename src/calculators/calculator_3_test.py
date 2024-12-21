@@ -34,7 +34,7 @@ def test_calculate_with_variance_error():
     calculator = Calculator3(driver)
     with raises(Exception) as exception_info:
         calculator.calculate(mock_request)
-    assert str(exception_info.value) == "Variance is less than multiplication"
+    assert str(exception_info.value) == "('Variance is less than multiplication', 400)"
 
 def test_calculate_with_invalid_body():
     mock_request = MockRequest(body={})
@@ -42,4 +42,4 @@ def test_calculate_with_invalid_body():
     calculator = Calculator3(driver)
     with raises(Exception) as exception_info:
         calculator.calculate(mock_request)
-    assert str(exception_info.value) == "numbers is required"
+    assert str(exception_info.value) == "('numbers is required', 422)"
